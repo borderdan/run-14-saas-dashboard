@@ -2,10 +2,12 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  organizationId: string;
-  role: 'admin' | 'member';
-  createdAt: string;
-  updatedAt: string;
+  organizationId?: string;
+  role: 'admin' | 'member' | string;
+  status: 'Active' | 'Inactive' | 'Pending';
+  lastLogin: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface Organization {
@@ -17,11 +19,14 @@ export interface Organization {
 }
 
 export interface Metric {
-  id: string;
-  name: string;
-  value: number;
+  id?: string;
+  name?: string;
+  label: string;
+  value: string | number;
+  change: string;
+  trend: 'up' | 'down';
   unit?: string;
-  timestamp: string;
+  timestamp?: string;
 }
 
 export interface DashboardWidget {
@@ -46,4 +51,32 @@ export interface APIResponse<T> {
   data?: T;
   error?: string;
   status: number;
+}
+
+export interface Revenue {
+  date: string;
+  amount: number;
+}
+
+export interface Page {
+  path: string;
+  views: number;
+  uniqueVisitors: number;
+  bounceRate: string;
+}
+
+export interface Activity {
+  id: string;
+  user: string;
+  action: string;
+  target: string;
+  timestamp: string;
+}
+
+export interface PaginatedUsers {
+  users: User[];
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
 }
