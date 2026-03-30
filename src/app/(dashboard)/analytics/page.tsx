@@ -84,7 +84,7 @@ function AnalyticsPage() {
       </div>
 
       {/* Main Area Chart */}
-      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-white/5">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Page Views</h2>
           <label className="flex items-center space-x-2 cursor-pointer">
@@ -145,7 +145,7 @@ function AnalyticsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Top Pages Table */}
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden flex flex-col">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-white/5 overflow-hidden flex flex-col">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Top Pages</h2>
           <div className="overflow-x-auto flex-grow">
             <table className="w-full text-sm text-left text-gray-600 dark:text-gray-300">
@@ -172,7 +172,7 @@ function AnalyticsPage() {
         </div>
 
         {/* Traffic Sources Donut Chart */}
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-white/5 flex flex-col">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Traffic Sources</h2>
           <div className="flex-grow flex items-center justify-center min-h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -201,7 +201,7 @@ function AnalyticsPage() {
         </div>
 
         {/* Geographic Heatmap (Simple Table) */}
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-white/5 flex flex-col">
           <div className="flex items-center gap-2 mb-4">
             <Globe className="w-5 h-5 text-gray-500 dark:text-gray-400" />
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Sessions by Country</h2>

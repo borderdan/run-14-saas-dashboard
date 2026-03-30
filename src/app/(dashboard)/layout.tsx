@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { Header } from '@/components/Header';
+import { PageTransition } from '@/components/PageTransition';
 
 // Need to handle cookies. In a real Next.js app, we'd probably use next/headers in a server component
 // to pass initial state, but since we are writing a client component wrapper (due to React state),
@@ -30,11 +31,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   // Prevent hydration mismatch by not rendering the dynamic parts until mounted
   if (!mounted) {
-    return <div className="min-h-screen bg-zinc-950"></div>;
+    return <div className="min-h-screen bg-gray-50 dark:bg-zinc-950"></div>;
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white flex">
+    <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 text-zinc-900 dark:text-white flex">
       <Sidebar
         isCollapsed={isCollapsed}
         toggleCollapse={toggleCollapse}
@@ -44,7 +45,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       <div
         className={`
-          flex-1 flex flex-col min-h-screen transition-all duration-300 ease-in-out
+          flex-1 flex flex-col min-h-screen transition-all duration-200 ease-in-out
           ${isCollapsed ? 'md:pl-[64px]' : 'md:pl-[240px]'}
         `}
       >
@@ -54,7 +55,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         />
 
         <main className="flex-1 mt-16 p-6">
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </main>
       </div>
     </div>
