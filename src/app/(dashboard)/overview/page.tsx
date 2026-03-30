@@ -107,7 +107,7 @@ export default function OverviewPage() {
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {kpiCards.map((card, index) => (
-          <Card key={index} className="backdrop-blur-lg bg-white/5 border-white/10 text-white">
+          <Card key={index} className="backdrop-blur-lg bg-white dark:bg-white/5 border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-zinc-400">
                 {card.title}
@@ -141,9 +141,9 @@ export default function OverviewPage() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Card className="backdrop-blur-lg bg-white/5 border-white/10 text-white">
+        <Card className="backdrop-blur-lg bg-white dark:bg-white/5 border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
           <CardHeader>
-            <CardTitle className="text-zinc-200">Revenue</CardTitle>
+            <CardTitle className="text-zinc-600 dark:text-zinc-200">Revenue</CardTitle>
           </CardHeader>
           <CardContent className="pl-0">
             <div className="h-[300px] w-full">
@@ -187,9 +187,9 @@ export default function OverviewPage() {
           </CardContent>
         </Card>
 
-        <Card className="backdrop-blur-lg bg-white/5 border-white/10 text-white">
+        <Card className="backdrop-blur-lg bg-white dark:bg-white/5 border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
           <CardHeader>
-            <CardTitle className="text-zinc-200">User Growth</CardTitle>
+            <CardTitle className="text-zinc-600 dark:text-zinc-200">User Growth</CardTitle>
           </CardHeader>
           <CardContent className="pl-0">
             <div className="h-[300px] w-full">

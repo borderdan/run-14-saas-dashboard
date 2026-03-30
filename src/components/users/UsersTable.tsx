@@ -78,13 +78,13 @@ export function UsersTable({ columns, data: initialData }: UsersTableProps) {
 
   return (
     <div className="w-full space-y-4">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex flex-1 items-center space-x-2">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row flex-1 items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
           <Input
             placeholder="Search by name or email..."
             value={globalFilter ?? ""}
             onChange={(event) => setGlobalFilter(event.target.value)}
-            className="max-w-sm"
+            className="w-full sm:max-w-sm"
           />
           <Select
             value={(table.getColumn("role")?.getFilterValue() as string) ?? "all"}
@@ -92,7 +92,7 @@ export function UsersTable({ columns, data: initialData }: UsersTableProps) {
               table.getColumn("role")?.setFilterValue(value === "all" ? undefined : value)
             }
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-full sm:w-[180px]">
               <SelectValue placeholder="Filter by Role" />
             </SelectTrigger>
             <SelectContent>
@@ -109,7 +109,7 @@ export function UsersTable({ columns, data: initialData }: UsersTableProps) {
               table.getColumn("status")?.setFilterValue(value === "all" ? undefined : value)
             }
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-full sm:w-[180px]">
               <SelectValue placeholder="Filter by Status" />
             </SelectTrigger>
             <SelectContent>
@@ -144,8 +144,8 @@ export function UsersTable({ columns, data: initialData }: UsersTableProps) {
           </DropdownMenu>
         )}
       </div>
-      <div className="rounded-md border">
-        <Table>
+      <div className="rounded-md border overflow-x-auto">
+        <Table className="min-w-[800px]">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -194,14 +194,14 @@ export function UsersTable({ columns, data: initialData }: UsersTableProps) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-between space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-4">
+        <div className="flex-1 text-sm text-muted-foreground text-center sm:text-left w-full">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
-        <div className="flex items-center space-x-6 lg:space-x-8">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:space-x-6 lg:space-x-8 w-full sm:w-auto">
           <div className="flex items-center space-x-2">
-            <p className="text-sm font-medium">Rows per page</p>
+            <p className="text-sm font-medium hidden sm:block">Rows per page</p>
             <Select
               value={`${table.getState().pagination.pageSize}`}
               onValueChange={(value) => {
