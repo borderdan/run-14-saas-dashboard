@@ -1,0 +1,21 @@
+{
+  "name": "run-14-saas-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borderdan/run-14-saas-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/borderdan/run-14-saas-dashboard/issues"
+  },
+  "homepage": "https://github.com/borderdan/run-14-saas-dashboard#readme"
+}
