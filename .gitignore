@@ -23,3 +23,11 @@ Thumbs.db
 
 # Jules artifacts
 verification*.png
+
+# next.js
+/.next/
+/out/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
